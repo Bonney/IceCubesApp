@@ -10,5 +10,5 @@ public struct Account: Codable, Identifiable {
 
 // MARK: Preview Content
 public extension Account {
-    static let preview: Account = Account(id: "1234567890", username: "@johnm@mastodon.social", displayName: "John Mastodon", avatar: URL(string: "https://files.mastodon.social/accounts/avatars/000/415/403/original/5fd8b8dba26e55f1.png")!, acct: "ACCT")
+    static let preview: Account = Account(id: "1234567890", username: "@johnm@mastodon.social", displayName: "John Mastodon", avatar: URL(string: "https://files.mastodon.social/accounts/avatars/000/415/403/original/5fd8b8dba26e55f1.png")!, acct: "@johnm@mastodon.social")
 }
