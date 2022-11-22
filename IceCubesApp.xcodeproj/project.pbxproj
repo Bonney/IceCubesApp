@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		02176BB0292BFC9700EDFE67 /* ProfileImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02176BAD292BFC9700EDFE67 /* ProfileImage.swift */; };
+		02176BB1292BFC9700EDFE67 /* UserAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02176BAF292BFC9700EDFE67 /* UserAccountView.swift */; };
+		02F9C832292C444A00C7BF76 /* StatusListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F9C831292C444A00C7BF76 /* StatusListRow.swift */; };
 		9F295540292B6C3400E0E81B /* Timeline in Frameworks */ = {isa = PBXBuildFile; productRef = 9F29553F292B6C3400E0E81B /* Timeline */; };
 		9FBFE63D292A715500C250E9 /* IceCubesAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBFE63C292A715500C250E9 /* IceCubesAppApp.swift */; };
 		9FBFE641292A715600C250E9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9FBFE640292A715600C250E9 /* Assets.xcassets */; };
@@ -15,6 +18,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		02176BAD292BFC9700EDFE67 /* ProfileImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileImage.swift; sourceTree = "<group>"; };
+		02176BAF292BFC9700EDFE67 /* UserAccountView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserAccountView.swift; sourceTree = "<group>"; };
+		02F9C831292C444A00C7BF76 /* StatusListRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusListRow.swift; sourceTree = "<group>"; };
 		9F29553D292B67B600E0E81B /* Network */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Network; path = Packages/Network; sourceTree = "<group>"; };
 		9F29553E292B6AF600E0E81B /* Timeline */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Timeline; path = Packages/Timeline; sourceTree = "<group>"; };
 		9FBFE639292A715500C250E9 /* IceCubesApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IceCubesApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -37,6 +43,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		02176BAC292BFC9700EDFE67 /* UI Components */ = {
+			isa = PBXGroup;
+			children = (
+				02176BAD292BFC9700EDFE67 /* ProfileImage.swift */,
+				02F9C831292C444A00C7BF76 /* StatusListRow.swift */,
+			);
+			path = "UI Components";
+			sourceTree = "<group>";
+		};
+		02176BAE292BFC9700EDFE67 /* ProfileView */ = {
+			isa = PBXGroup;
+			children = (
+				02176BAF292BFC9700EDFE67 /* UserAccountView.swift */,
+			);
+			path = ProfileView;
+			sourceTree = "<group>";
+		};
 		9FBFE630292A715500C250E9 = {
 			isa = PBXGroup;
 			children = (
@@ -59,6 +82,8 @@
 		9FBFE63B292A715500C250E9 /* IceCubesApp */ = {
 			isa = PBXGroup;
 			children = (
+				02176BAE292BFC9700EDFE67 /* ProfileView */,
+				02176BAC292BFC9700EDFE67 /* UI Components */,
 				9FBFE63C292A715500C250E9 /* IceCubesAppApp.swift */,
 				9FBFE640292A715600C250E9 /* Assets.xcassets */,
 				9FBFE642292A715600C250E9 /* IceCubesApp.entitlements */,
@@ -156,7 +181,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				02176BB1292BFC9700EDFE67 /* UserAccountView.swift in Sources */,
 				9FBFE63D292A715500C250E9 /* IceCubesAppApp.swift in Sources */,
+				02F9C832292C444A00C7BF76 /* StatusListRow.swift in Sources */,
+				02176BB0292BFC9700EDFE67 /* ProfileImage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
