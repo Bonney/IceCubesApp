@@ -23,11 +23,11 @@ struct ProfileImage: View {
             image
                 .resizable()
                 .aspectRatio(contentMode: .fit)
-                .mask(RoundedRectangle(cornerRadius: (size * 0.25), style: .continuous))
         } placeholder: {
             ProgressView()
         }
         .frame(width: size, height: size)
+        .mask(RoundedRectangle(cornerRadius: (size * 0.25), style: .continuous))
     }
 }
 
