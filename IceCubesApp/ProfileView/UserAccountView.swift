@@ -23,23 +23,24 @@ struct UserAccountView: View {
             // User info
             Section {
                 headerImage()
-                    .listRowInsets(EdgeInsets())
-
+                    .listRowSeparator(.hidden)
+//
                 HStack {
                     ProfileImage(account: account, size: 60)
-
+                    
                     VStack(alignment: .leading) {
                         Text(account.displayName)
                             .font(.headline)
-
+                        
                         Text(account.username)
                             .font(.subheadline)
                             .foregroundStyle(.secondary)
                     }
                 }
-
+                
                 Text("This is my profile text, describing what I do and who I am.")
                     .listRowSeparator(.hidden)
+
 
                 followerCounts()
             }
@@ -79,7 +80,10 @@ struct UserAccountView: View {
     func headerImage() -> some View {
         // @TODO: Need header image URL from API.
         LinearGradient(colors: [.blue, .indigo], startPoint: .top, endPoint: .bottom)
-            .frame(height: 200)
+            .frame(height: 240)
+            .mask {
+                RoundedRectangle(cornerRadius: 18, style: .continuous)
+            }
     }
 
     func followerCounts() -> some View {
@@ -109,7 +113,9 @@ struct UserAccountView: View {
     @ViewBuilder func feedTab(for tab: UserAccountTabs) -> some View {
         switch tab {
         case .posts:
-            Text("Posts")
+            ForEach(0..<10) { _ in
+                StatusListRow(status: Status.preview)
+            }
         case .replies:
             Text("Posts & Replies")
         case .media:
