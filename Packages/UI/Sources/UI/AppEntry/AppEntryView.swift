@@ -18,6 +18,30 @@ public struct AppEntryView: View {
             NavigationStack {
                 StatusesView()
             }
+            .tabItem {
+                Label("Timeline", systemImage: "house")
+            }
+
+            NavigationStack {
+                Text("Search View")
+            }
+            .tabItem {
+                Label("Search", systemImage: "magnifyingglass")
+            }
+
+            NavigationStack {
+                Text("Notifications View")
+            }
+            .tabItem {
+                Label("Notifications", systemImage: "bell")
+            }
+
+            NavigationStack {
+                UserAccountView(account: Account.preview)
+            }
+            .tabItem {
+                Label("Profile", systemImage: "person.crop.circle")
+            }
 
         }
         .environmentObject(client)
