@@ -28,6 +28,7 @@ public struct StatusesView: View {
                 loadedState()
             }
         }
+        .listStyle(.plain)
         .navigationDestination(for: Account.self) { account in
             UserAccountView(account: account)
         }
@@ -65,7 +66,9 @@ public struct StatusesView: View {
 
 struct StatusesView_Previews: PreviewProvider {
     static var previews: some View {
-        StatusesView()
-            .environmentObject(Client(server: "mastodon.social"))
+        NavigationStack {
+            StatusesView()
+                .environmentObject(Client(server: "mastodon.social"))
+        }
     }
 }

@@ -19,9 +19,13 @@ public struct StatusListRow: View {
     public var body: some View {
         VStack {
             StatusListHeader(status: status)
+
             StatusListTextContent(status: status)
-            // @TODO: StatusListImageContent(status: status)
+
+            StatusListImageContent(status: status)
+
             StatusListActions(status: status)
+                .padding(.top, 4)
         }
     }
 }
@@ -64,12 +68,12 @@ public struct StatusListHeader: View {
     /// Creates a label such as "15m", "2d", "3mo".
     func timeOffsetLabel(for status: Status) -> some View {
         // @TODO: Need Status.timestamp
-        Text("3h")
+        Text("Xh ago")
     }
 }
 
 
-/// Middle section of a status post in a list. Content of the post: text, images, links, etc.
+/// Middle section of a status post in a list. Text content of the post, links, tags, etc.
 public struct StatusListTextContent: View {
     let status: Status
 
@@ -84,6 +88,29 @@ public struct StatusListTextContent: View {
         )
         .font(.body)
         .foregroundStyle(.primary)
+    }
+}
+
+/// Middle section of a status post in a list. Image content.
+public struct StatusListImageContent: View {
+    let status: Status
+
+    init(status: Status) {
+        self.status = status
+    }
+
+    public var body: some View {
+        HStack(spacing: 4) {
+            Rectangle().fill(Color.blue.gradient)
+            VStack(spacing: 4) {
+                Rectangle().fill(Color.indigo.gradient)
+                Rectangle().fill(Color.red.gradient)
+            }
+        }
+        .frame(height: 180)
+        .mask {
+            RoundedRectangle(cornerRadius: 12, style: .continuous)
+        }
     }
 }
 
@@ -157,5 +184,6 @@ struct StatusListRow_Previews: PreviewProvider {
             StatusListRow(status: Status.preview)
             StatusListRow(status: Status.preview)
         }
+        .listStyle(.plain)
     }
 }
