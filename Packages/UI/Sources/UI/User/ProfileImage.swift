@@ -9,16 +9,16 @@ import SwiftUI
 import Network
 
 /// Supply this view with an Account to get the Async profile image.
-struct ProfileImage: View {
+public struct ProfileImage: View {
     var account: Account
     var size: Double
 
-    init(account: Account, size: Double) {
+    public init(account: Account, size: Double) {
         self.account = account
         self.size = size
     }
 
-    var body: some View {
+    public var body: some View {
         AsyncImage(url: account.avatar) { image in
             image
                 .resizable()

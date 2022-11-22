@@ -9,23 +9,32 @@ import SwiftUI
 import Network
 
 /// A view for displaying a "status" post in a List.
-struct StatusListRow: View {
+public struct StatusListRow: View {
     let status: Status
 
-    var body: some View {
+    init(status: Status) {
+        self.status = status
+    }
+
+    public var body: some View {
         VStack {
             StatusListHeader(status: status)
-            StatusListContent(status: status)
+            StatusListTextContent(status: status)
+            // @TODO: StatusListImageContent(status: status)
             StatusListActions(status: status)
         }
     }
 }
 
 /// Top section of a status post in a list. User image, name, timestamp.
-struct StatusListHeader: View {
+public struct StatusListHeader: View {
     let status: Status
 
-    var body: some View {
+    init(status: Status) {
+        self.status = status
+    }
+
+    public var body: some View {
         HStack(alignment: .top) {
             ProfileImage(account: status.account, size: 40)
             accountLabel(for: status.account)
@@ -59,26 +68,35 @@ struct StatusListHeader: View {
     }
 }
 
+
 /// Middle section of a status post in a list. Content of the post: text, images, links, etc.
-struct StatusListContent: View {
+public struct StatusListTextContent: View {
     let status: Status
 
+    public init(status: Status) {
+        self.status = status
+    }
 
-    var body: some View {
+    public var body: some View {
         Text(
             // Workaround to get markdown links working. We're probably not going to do this in production.
             LocalizedStringKey(status.content)
         )
-            .font(.body)
-            .foregroundStyle(.primary)
+        .font(.body)
+        .foregroundStyle(.primary)
     }
 }
 
+
 /// Bottom section of a status post in a list. Buttons reply, like, etc.
-struct StatusListActions: View {
+public struct StatusListActions: View {
     let status: Status
 
-    var body: some View {
+    init(status: Status) {
+        self.status = status
+    }
+
+    public var body: some View {
         HStack {
             primaryButtons()
                 .buttonStyle(.borderless) // REQUIRED for multiple buttons in one List row.

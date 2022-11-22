@@ -13,12 +13,16 @@ enum UserAccountTabs: String, CaseIterable, Identifiable {
     case posts, replies, media, about
 }
 
-struct UserAccountView: View {
-    var account: Account
+public struct UserAccountView: View {
+    let account: Account
+
+    init(account: Account) {
+        self.account = account
+    }
 
     @State private var tab: UserAccountTabs = .posts
 
-    var body: some View {
+    public var body: some View {
         List {
             // User info
             Section {
@@ -134,24 +138,3 @@ struct UserAccountView_Previews: PreviewProvider {
         }
     }
 }
-//
-//
-//VStack(alignment: .leading) {
-//    HStack {
-//        AsyncImage(
-//            url: status.account.avatar,
-//            content: { image in
-//                image.resizable()
-//                    .aspectRatio(contentMode: .fit)
-//                    .cornerRadius(13)
-//                    .frame(maxWidth: 26, maxHeight: 26)
-//            },
-//            placeholder: {
-//                ProgressView()
-//            }
-//        )
-//        Text(status.account.username)
-//    }
-//    Text(status.content)
-//}
-//}
